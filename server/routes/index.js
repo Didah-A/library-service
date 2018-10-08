@@ -10,13 +10,17 @@ module.exports = (app) => {
 
     app.get("/api/v1/books", BooksController.getAllBooks);
 
+    app.delete("/api/v1/books", BooksController.deleteAllBooks);
+
+    app.get("/api/v1/overdue", BooksController.getOverdueBooks);
+
     app.put("/api/v1/books/:bookId", BooksController.updateBook);
 
     app.get("/api/v1/books/:bookId", BooksController.fetchBook);
 
     app.delete("/api/v1/books/:bookId", BooksController.deleteBook);
 
-    app.put("/api/v1/:bookId/borrow", (req, res) => res.status(200).send("successfully borrowed"));
+    app.put("/api/v1/books/:bookId/borrow", BooksController.borrowBook);
 
-    app.put("/api/v1/:bookId/return", (req, res) => res.status(200).send("successfully borrowed"));
+    app.put("/api/v1/books/:bookId/return", BooksController.returnBook);
 };
