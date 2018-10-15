@@ -1,23 +1,22 @@
-// import all the required packages
+/* Required imports to run the Node Service */
 const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
+const { errors } = require("celebrate");
 require('dotenv').config();
 
+/* Mongo database configuration */
 const mongoose = require('mongoose');
 mongoose.connect(`${process.env.DIALECT}://${process.env.HOST}/${process.env.DB_NAME}`, { useNewUrlParser: true });
 
 const app = express();
 
-app.use(logger("dev")); //declare morgan logger to work in the dev environment
+app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// import all the routes for the service
-require('./server/routes')(app);
+require('./src/routes')(app);
 
-app.get("*", (req, res) => res.status(200).send({
-    message: "Welcome to The Library API, Please Enter a valid Endpoint"
-}));
+app.use(errors());
 
 module.exports = app;

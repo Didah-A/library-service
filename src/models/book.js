@@ -29,7 +29,6 @@ const booksSchema = new Schema({
         default: "New book"
     },
     available: Boolean,
-    overdue: { type: Boolean, default: false },
     borrowers: [
         {
             username: String,
