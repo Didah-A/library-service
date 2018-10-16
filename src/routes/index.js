@@ -2,16 +2,15 @@
     Routes declarations module
     Book Validations module is used to validate the input from the user.
 */
-const { errors } = require("celebrate");
 const BooksController = require("../controllers").Book;
 const { 
-    createValidator, 
+    createValidator,
     updateValidator,
-    returnBookValidator, 
-    borrowBookValidator, 
-    getBookValidator, 
-    getAllBooksValidator 
-}  = require("../validators/bookValidations");
+    returnBookValidator,
+    borrowBookValidator,
+    getBookValidator,
+    getAllBooksValidator
+}  = require("../validations/bookValidations");
 
 module.exports = (app) => {
     app.get("/", (req, res) => res.status(200).send({
@@ -37,6 +36,6 @@ module.exports = (app) => {
     app.put("/api/v1/books/:bookId/return", returnBookValidator, BooksController.returnBook);
 
     app.get("*", (req, res) => res.status(404).send({
-        message: "Welcome to The Library API, Please Enter a valid Endpoint"
+        message: "Please Enter a valid Endpoint"
     }));
 };

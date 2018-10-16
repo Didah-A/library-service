@@ -27,7 +27,7 @@ const borrowBookValidator = celebrate({
 
 const getBookValidator = celebrate({
     params: Joi.object().keys({
-        bookId: Joi.number().min(3).required()
+        bookId: Joi.string().min(3).required()
     })
 });
 

@@ -4,10 +4,9 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const { errors } = require("celebrate");
 require('dotenv').config();
+const { connectDB } = require("./config");
 
-/* Mongo database configuration */
-const mongoose = require('mongoose');
-mongoose.connect(`${process.env.DIALECT}://${process.env.HOST}/${process.env.DB_NAME}`, { useNewUrlParser: true });
+connectDB();
 
 const app = express();
 
@@ -15,6 +14,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// import all service routes
 require('./src/routes')(app);
 
 app.use(errors());
