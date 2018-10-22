@@ -11,6 +11,7 @@ This is a RESTful Library Service that can
 - list all available books
 - delete all books
 
+_[DEMO]( https://blooming-reaches-19245.herokuapp.com/)_
  
 # Getting Started
 The program has been fully developed using **Nodejs, Expressjs** while the database implementation uses **Mongoose** and **Mongodb**
@@ -45,17 +46,17 @@ HOST="a url string to the database"
 
 ## Endpoints
 
-| Endpoint                        | Allowed Methods  | Functionality                             |
-| ------------------------------- | ---------------- | ----------------------------------------- |
-| `/books`                        | POST             | Create a book                             |
-| `/books`                        | GET              | Gets all books                            |
-| `/books?author=mark`            | GET              | gets all books with author by mark        |
-| `/books?publication_year=1994`  | GET              | gets all books published in 1994          |
-| `/books?available=true`         | GET              | gets all  available books                 |
-| `/books/:id`                    | GET, PUT, DELETE | Retrieve, Update and Delete a book        |
-| `/books/:bookId/borrow`         | PUT              | Borrow a book                             |
-| `/books/:bookId/return`         | PUT              | Return a borrowed book                    |
-| `/books/overdue`                | GET              | Gets all overdue books                    |
+| Endpoint                              | Allowed Methods  | Functionality                             |
+| ------------------------------------- | ---------------- | ----------------------------------------- |
+| `api/v1/books`                        | POST             | Create a book                             |
+| `api/v1/books`                        | GET              | Gets all books                            |
+| `api/v1/books?author=mark`            | GET              | gets all books with author by mark        |
+| `api/v1/books?publication_year=1994`  | GET              | gets all books published in 1994          |
+| `api/v1/books?available=true`         | GET              | gets all  available books                 |
+| `api/v1/books/:id`                    | GET, PUT, DELETE | Retrieve, Update and Delete a book        |
+| `api/v1/books/:bookId/borrow`         | PUT              | Borrow a book                             |
+| `api/v1/books/:bookId/return`         | PUT              | Return a borrowed book                    |
+| `api/v1/books/overdue`                | GET              | Gets all overdue books                    |
  - - - - - - - - - - - - - - - - -  - - - - - - - - - -  - - - - - - - - - - - - - - - -- - - - -
  
  ### Usage
