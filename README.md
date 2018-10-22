@@ -11,7 +11,7 @@ This is a RESTful Library Service that can
 - list all available books
 - delete all books
 
-_[DEMO]( https://blooming-reaches-19245.herokuapp.com/)_
+#### Checkout application demo on this link _[Library service demo]( https://blooming-reaches-19245.herokuapp.com/)_
  
 # Getting Started
 The program has been fully developed using **Nodejs, Expressjs** while the database implementation uses **Mongoose** and **Mongodb**
